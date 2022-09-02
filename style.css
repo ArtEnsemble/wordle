@@ -2,7 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -18,7 +17,12 @@
   -webkit-text-size-adjust: 100%;
 
   --font-input: "Permanent Marker";
-  font-family: Roboto, Arial, Arial, Helvetica, sans-serif;
+  --font-main: Roboto, Arial, Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-family: var(--font-main);
+  text-align: center;
 }
 
 a {
@@ -66,6 +70,7 @@ form.word {
   justify-content: space-between;
   width: 400px;
   transition: 0.8s ease-in;
+  max-height: auto;
 }
 
 #app {
@@ -78,7 +83,7 @@ form.word {
 
 form button {
   border-radius: 5%;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: var(--font-main);
   font-size: 1.5rem;
   transition: 0.5s ease-in;
 }
@@ -88,8 +93,57 @@ form button {
 
 form.hidden {
   opacity: 0;
+  max-height: 0;
 }
 #result {
   opacity: 0;
   transition: 1s linear;
+  font-family: var(--font-main);
+  font-size: 2rem;
+}
+
+#alphabet {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  width: clamp(500px, 50%, 100%);
+}
+#alphabet li {
+  font-family: var(--font-main);
+  font-size: 2rem;
+  background-color: white;
+  border: 1px solid darkmagenta;
+  border-radius: 50%;
+  padding: 10px;
+  width: 2rem;
+  text-align: center;
+  aspect-ratio: 1;
+  color: darkmagenta;
+  list-style-type: none;
+  transition: 0.5s linear;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#alphabet li[data-used="yes"] {
+  background-color: rgba(0, 153, 0, 0.7);
+  border-color: white;
+  color: white;
+  font-weight: bold;
+}
+
+#alphabet li[data-used="maybe"] {
+  background-color: rgba(245, 236, 39, 0.8);
+  border-color: white;
+  color: white;
+  font-weight: bold;
+}
+
+#alphabet li[data-used="no"] {
+  background-color: rgba(211, 23, 54, 0.7);
+  border-color: white;
+  color: white;
+  font-weight: bold;
 }
