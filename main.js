@@ -59,7 +59,7 @@ allForms.forEach((form) => {
 /// EVENT LISTENERS
 
 document.addEventListener("input", function (e) {
-  console.log(e.target);
+  console.log(e);
   if (e.target.parentElement.classList.contains("word")) {
     if (e.target.nextElementSibling && e.target.value) {
       e.target.nextElementSibling.focus();
@@ -67,6 +67,18 @@ document.addEventListener("input", function (e) {
         e.target.nextElementSibling.select();
       }
     }
+  }
+});
+
+//backspace
+document.addEventListener("keyup", function (e) {
+  if (
+    e.target.parentElement.classList.contains("word") &&
+    e.key === "Backspace" &&
+    e.target.previousElementSibling
+  ) {
+    e.target.previousElementSibling.select();
+    e.target.previousElementSibling.focus();
   }
 });
 
