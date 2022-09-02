@@ -8,7 +8,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: lightslategray;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -16,7 +16,7 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --font-input: "Permanent Marker";
+  --font-input: Roboto, Arial, Helvetica, sans-serif;
   --font-main: Roboto, Arial, Arial, Helvetica, sans-serif;
 }
 
@@ -47,8 +47,9 @@ h1 {
   height: 3rem;
   width: 3rem;
   text-align: center;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-family: var(--font-input);
+  text-transform: uppercase;
 }
 
 .letter-correct {
@@ -146,4 +147,5 @@ form.hidden {
   border-color: white;
   color: white;
   font-weight: bold;
+  text-decoration: line-through;
 }
